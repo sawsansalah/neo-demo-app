@@ -1,11 +1,23 @@
-name: demo-app-pipeline
+name: backend-ci
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
+    paths:
+      - backend/nginx/**
 
 jobs:
-  call-platform:
-    uses: sawsansalah/neo-demo-platform/.github/workflows/platform-echo.yml@v1.0.0
+  deploy-dev:
+    uses: sawsansalah/demo-platform/.github/workflows/build-deploy.yml@v1.0.0
     with:
-      message: "Triggered by demo-app push"
+      microservice: backend-nginx
+      env: dev
+    secrets: inherit
+
+  deploy-qa:
+    uses: sawsansalah/demo-platform/.github/workflows/build-deploy.yml@v1.0.0
+    with:
+      microservice: backend-nginx
+      env: qa
+    secrets: inherit
+
