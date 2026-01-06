@@ -2,7 +2,7 @@ name: backend-ci
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - backend/nginx/**
 
