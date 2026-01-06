@@ -1,0 +1,11 @@
+name: demo-app-pipeline
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  call-platform:
+    uses: sawsansalah/neo-demo-platform/.github/workflows/platform-echo.yml@v1.0.0
+    with:
+      message: "Triggered by demo-app push"
