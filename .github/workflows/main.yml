@@ -8,14 +8,14 @@ on:
 
 jobs:
   deploy-dev:
-    uses: sawsansalah/neo-demo-platform/.github/workflows/build-deploy.yml@v1.0.0
+    uses: sawsansalah/neo-demo-platform/.github/workflows/build-deploy.yml
     with:
       microservice: backend-nginx
       env: dev
     secrets: inherit
 
   deploy-qa:
-    uses: sawsansalah/neo-demo-platform/.github/workflows/build-deploy.yml@v1.0.0
+    uses: sawsansalah/neo-demo-platform/.github/workflows/build-deploy.yml
     with:
       microservice: backend-nginx
       env: qa
